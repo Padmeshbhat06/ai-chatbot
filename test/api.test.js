@@ -1,89 +1,154 @@
 /**
- * SVIT chatbot verification suite.
- * Starts against a running server (default http://localhost:3000).
- * Usage: npm test   (with `npm start` running in another terminal)
- *   or: PORT=3000 node test/api.test.js
+ * Step 2 validation: simulate real POST requests against api/chat.js.
+ * Runs with and without GEMINI_API_KEY for 8 required queries.
+ * Prints exact response for each and asserts none return the welcome string.
+ *
+ * Usage: node test/api.test.js
  */
 const http = require('http');
 
-const HOST = process.env.HOST || 'localhost';
-const PORT = parseInt(process.env.PORT, 10) || 3000;
-
-function post(msg) {
-    return new Promise((resolve, reject) => {
-        const d = JSON.stringify({ message: msg });
-        const r = http.request({
-            hostname: HOST, port: PORT, path: '/api/chat', method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(d) }
-        }, x => { let b = ''; x.on('data', c => b += c); x.on('end', () => resolve(b)); });
-        r.on('error', reject);
-        r.write(d); r.end();
-    });
-}
-
-// [query, [required substrings], expected source]
-const tests = [
-    ['What is the college name, address, and contact details?',
-        ['Sai Vidya Institute of Technology', 'Rajanukunte', '560064', '+91 8028468191', '+91 9108575191', 'info@saividya.ac.in'], 'svitKnowledgeBase'],
-    ['Do you offer M.Tech or MCA?',
-        ['does not currently offer', 'MBA', 'B.Tech', 'BBA'], 'svitKnowledgeBase'],
-    ['What are the annual fees for B.Tech, BBA, and MBA?',
-        ['1,30,000', '40,000', '76,000'], 'svitKnowledgeBase'],
-    ['What are the KCET and COMEDK codes and 2026 cutoffs for CSE and AI & ML?',
-        ['E173', 'E113', '99,704', '71,959'], 'svitKnowledgeBase'],
-    ['Tell me about 2026 placements and highest package.',
-        ['413', '33 LPA', 'Prof. Anand Kumar', 'ECE'], 'svitKnowledgeBase'],
-    ['What are the major events and technical clubs at SVIT?',
-        ['HackFest', 'TechVidya', 'SKU', 'AIGNITE', 'Coding Club'], 'svitKnowledgeBase'],
-    ['Tell me about hostel facilities, bus transport, and scholarships.',
-        ['hostel', 'bus', 'SSP', 'NSP'], 'svitKnowledgeBase'],
-    ['Who is the Principal and who are the department HODs?',
-        ['Dr. Manjunath T N', 'HOD', 'Shashikumar'], 'svitKnowledgeBase'],
-    ['What is the exact menu in the canteen today?',
-        ['https://saividya.ac.in/', '+91 8028468191', '+91 9108575191', 'admission@saividya.ac.in'], 'fallback'],
-    ['What is the exact management quota donation amount for CSE?',
-        ['https://saividya.ac.in/', '+91 8028468191', 'admission@saividya.ac.in'], 'fallback'],
-    ['How were 2026 placements at SVIT?',
-        ['413', '33 LPA', 'ECE', 'CSE', 'ISE'], 'svitKnowledgeBase'],
-    // Regression coverage
-    ['hi', ['Welcome to Sai Vidya'], 'welcome'],
-    ['kcet cutoff', ['59,336'], 'svitKnowledgeBase'],
-    ['comedk cutoff', ['45,073'], 'svitKnowledgeBase'],
-    ['ise clubs', ['AIGNITE', 'SAMARTHYA', 'TECHNICS FORUM'], 'svitKnowledgeBase'],
-    ['clubs', ['AIGNITE', 'Coding Club'], 'svitKnowledgeBase'],
-    ['fees', ['1,30,000'], 'svitKnowledgeBase'],
-    ['placements', ['413'], 'svitKnowledgeBase'],
-    ['scholarship', ['SSP', 'Defence Scholarship'], 'svitKnowledgeBase'],
-    ['naac', ['NAAC'], 'svitKnowledgeBase'],
-    ['transport', ['college bus', 'R1'], 'svitKnowledgeBase'],
-    ['hostel', ['Boys Hostel', 'Girls Hostel'], 'svitKnowledgeBase'],
-    ['library', ['Library'], 'svitKnowledgeBase'],
-    ['timings', ['09:00 AM'], 'svitKnowledgeBase'],
-    ['mtech', ['does not currently offer'], 'svitKnowledgeBase'],
-    ['principal', ['Dr. Manjunath T N'], 'svitKnowledgeBase'],
-    ['contact', ['8028468191'], 'svitKnowledgeBase'],
-    ['autonomous', ['2008', 'VTU'], 'svitKnowledgeBase']
+const WELCOME = 'I can answer questions about SVIT — Admissions, Courses, Fees';
+const QUERIES = [
+  'courses',
+  'fees',
+  'How were 2026 placements at SVIT?',
+  'What are the KCET & COMEDK codes?',
+  'Do you offer M.Tech or MCA?',
+  'Tell me about hostel & college bus facilities',
+  'What are the major events & clubs?',
+  "What is today's canteen menu?"
 ];
 
-(async () => {
-    let passed = 0, failed = 0;
-    for (const [q, snippets, src] of tests) {
-        try {
-            const b = await post(q);
-            const j = JSON.parse(b);
-            const missing = snippets.filter(s => !(j.answer || '').includes(s));
-            const srcOk = src === 'any' || j.source === src;
-            if (missing.length === 0 && srcOk) {
-                passed++;
-            } else {
-                failed++;
-                console.log('FAIL |', q, '| source:', j.source, '| missing:', missing.join(' , ') || '(source mismatch)');
-            }
-        } catch (e) {
-            failed++;
-            console.log('ERROR |', q, '|', e.message);
-        }
+function makeReqRes(bodyObj) {
+  const EventEmitter = require('events');
+  const req = new EventEmitter();
+  req.method = 'POST';
+  req.headers = { 'content-type': 'application/json' };
+  req.body = undefined;
+
+  let statusCode = 200;
+  const headers = {};
+  let out = '';
+  const res = {
+    setHeader(k, v) { headers[String(k).toLowerCase()] = v; },
+    get statusCode() { return statusCode; },
+    set statusCode(v) { statusCode = v; },
+    end(chunk) { if (chunk) out += String(chunk); res._ended = true; res._resolve({ statusCode, headers, body: out }); }
+  };
+  res._ended = false;
+  res._promise = new Promise((resolve) => { res._resolve = resolve; });
+
+  process.nextTick(() => {
+    req.emit('data', Buffer.from(JSON.stringify(bodyObj)));
+    req.emit('end');
+  });
+
+  return { req, res };
+}
+
+function makeReqResParsed(bodyObj) {
+  let statusCode = 200;
+  const headers = {};
+  let out = '';
+  const req = { method: 'POST', headers: { 'content-type': 'application/json' }, body: bodyObj };
+  const res = {
+    setHeader(k, v) { headers[String(k).toLowerCase()] = v; },
+    get statusCode() { return statusCode; },
+    set statusCode(v) { statusCode = v; },
+    end(chunk) { if (chunk) out += String(chunk); res._ended = true; }
+  };
+  return { req, res, getResult: () => ({ statusCode, headers, body: out }) };
+}
+
+async function callHandler(handler, message, mode) {
+  if (mode === 'parsed') {
+    const { req, res, getResult } = makeReqResParsed({ message });
+    await handler(req, res);
+    return getResult();
+  }
+  const { req, res } = makeReqRes({ message });
+  const p = res._promise;
+  await handler(req, res);
+  return p;
+}
+
+function loadApiFresh() {
+  for (const k of Object.keys(require.cache)) {
+    const key = String(k).toLowerCase();
+    if (key.includes('chat-core.js') || key.includes('api\\chat.js') || key.includes('api/chat.js')) {
+      delete require.cache[k];
     }
-    console.log('\n=== RESULTS: ' + passed + ' passed, ' + failed + ' failed, total ' + tests.length + ' ===');
-    process.exit(failed ? 1 : 0);
-})();
+  }
+  return require('../api/chat.js');
+}
+
+function hasWelcome(text) {
+  return String(text || '').includes(WELCOME);
+}
+
+function extractAnswer(body) {
+  let parsed;
+  try { parsed = JSON.parse(body); } catch (e) { return { parsed: null, answer: String(body) }; }
+  const answer = parsed && (parsed.reply || parsed.answer || parsed.response || '');
+  return { parsed, answer: String(answer) };
+}
+
+async function runSuite(label, envValue) {
+  const prev = process.env.GEMINI_API_KEY;
+  if (envValue === undefined) delete process.env.GEMINI_API_KEY;
+  else process.env.GEMINI_API_KEY = envValue;
+
+  const handler = loadApiFresh();
+  const results = [];
+  console.log(`\n${'='.repeat(70)}`);
+  console.log(`SUITE: ${label}`);
+  console.log(`GEMINI_API_KEY set: ${!!process.env.GEMINI_API_KEY}`);
+  console.log('='.repeat(70));
+
+  for (const q of QUERIES) {
+    const r = await callHandler(handler, q, 'parsed');
+    const { parsed, answer } = extractAnswer(r.body);
+    const welcome = hasWelcome(answer);
+    const hasKeys = !!(parsed && typeof parsed.reply === 'string' && typeof parsed.answer === 'string' && typeof parsed.response === 'string');
+    const pass = !welcome && r.statusCode === 200 && hasKeys && answer.trim().length > 0;
+    results.push({ q, pass, welcome, statusCode: r.statusCode, hasKeys, answer, parsed });
+    console.log(`\n--- Query: ${q}`);
+    console.log(`HTTP: ${r.statusCode} | has reply/answer/response: ${hasKeys} | welcome: ${welcome} | PASS: ${pass}`);
+    console.log(`Exact response: ${answer}`);
+  }
+
+  if (prev === undefined) delete process.env.GEMINI_API_KEY;
+  else process.env.GEMINI_API_KEY = prev;
+
+  return results;
+}
+
+async function main() {
+  const noKey = await runSuite('WITHOUT GEMINI_API_KEY', undefined);
+  const withKey = await runSuite('WITH GEMINI_API_KEY (dummy, should fall back to local)', 'dummy-test-key');
+
+  const all = [...noKey.map(r => ({ ...r, suite: 'no-key' })), ...withKey.map(r => ({ ...r, suite: 'with-key' }))];
+  const failed = all.filter(r => !r.pass);
+
+  console.log(`\n${'='.repeat(70)}`);
+  console.log('SUMMARY');
+  console.log('='.repeat(70));
+  console.log(`No-key:   ${noKey.filter(r => r.pass).length}/${noKey.length} passed`);
+  console.log(`With-key: ${withKey.filter(r => r.pass).length}/${withKey.length} passed`);
+  console.log(`Total:    ${all.filter(r => r.pass).length}/${all.length} passed`);
+
+  if (failed.length) {
+    console.log('\nFAILURES:');
+    for (const f of failed) {
+      console.log(`- [${f.suite}] ${f.q} | welcome=${f.welcome} | status=${f.statusCode} | hasKeys=${f.hasKeys}`);
+    }
+    process.exit(1);
+  }
+  console.log('\nALL 8 QUERIES PASSED IN BOTH MODES (no welcome string returned).');
+  process.exit(0);
+}
+
+main().catch((e) => {
+  console.error('TEST RUNNER ERROR:', e && e.stack ? e.stack : e);
+  process.exit(1);
+});

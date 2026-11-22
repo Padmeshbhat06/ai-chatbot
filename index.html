@@ -1063,7 +1063,10 @@
         ]; */ // end of commented-out old inline array — data now loaded from src/data/svitKnowledgeBase.json
 
         function findPredefinedAnswer(query) {
-            const normalized = query.toLowerCase();
+            const normalized = String(query || '').toLowerCase().trim();
+            if (!normalized) {
+                return window.__SVIT_KB__ && window.__SVIT_KB__.chatbot ? window.__SVIT_KB__.chatbot.greeting : '';
+            }
             // Priority 1: verified SVIT knowledge base (fees, placements, KCET/COMEDK cutoffs, events, clubs, contacts, etc.)
             for (let i = 0; i < predefinedQA.length; i++) {
                 const entry = predefinedQA[i];
@@ -1071,19 +1074,22 @@
                     return normalized.includes(kw);
                 });
                 if (matched) {
-                    return entry.answer;
+                    const ans = entry.answer;
+                    // Never return welcome/menu for a real non-greeting question.
+                    if (ans && ans !== '__GREETING__') return ans;
                 }
             }
-            // Anti-hallucination guard: vague / unverifiable queries (seat availability, category-wise ranks, counselling rounds)
-            const antiHallucinationKeywords = ['menu', 'donation', 'management quota', 'seat availability', 'seat allotment', 'counselling round', 'custom fee concession', 'exact cutoff rank', 'free seat', 'refund'];
+            // Anti-hallucination guard: vague / unverifiable queries
+            const antiHallucinationKeywords = ['menu', 'donation', 'management quota', 'seat availability', 'seat allotment', 'counselling round', 'custom fee concession', 'exact cutoff rank', 'free seat', 'refund', 'canteen menu'];
             if (antiHallucinationKeywords.some(function (kw) { return normalized.includes(kw); })) {
                 return window.__SVIT_KB__ && window.__SVIT_KB__.chatbot
                     ? window.__SVIT_KB__.chatbot.antiHallucinationFallback
-                    : "I can only share verified SVIT information. For seat availability, category-based cutoffs, or counselling-round details, contact SVIT Admissions at +91 8028468191 or +91 9108575191, or email info@saividya.ac.in / admission@saividya.ac.in.";
+                    : "I don't have verified information about that in the SVIT knowledge base, so I won't guess. Please verify directly with SVIT:\n• Official Website: https://saividya.ac.in/\n• Admissions & General Helpline: +91 8028468191, +91 9108575191\n• Email: info@saividya.ac.in / admission@saividya.ac.in";
             }
+            // Genuine out-of-scope / no local match: official fallback, never welcome menu.
             return window.__SVIT_KB__ && window.__SVIT_KB__.chatbot
-                ? window.__SVIT_KB__.chatbot.fallbackMessage
-                : "I can answer questions about SVIT — Admissions, Courses, Fees, Timings, Library, Events, Clubs, Accreditations, Leadership, Contact details, Placements & Internships, and Mechanical Engineering best practices. Try clicking a quick chip or type your question!";
+                ? window.__SVIT_KB__.chatbot.antiHallucinationFallback
+                : "I don't have verified information about that in the SVIT knowledge base, so I won't guess. Please verify directly with SVIT:\n• Official Website: https://saividya.ac.in/\n• Admissions & General Helpline: +91 8028468191, +91 9108575191\n• Email: info@saividya.ac.in / admission@saividya.ac.in";
         }
 
         function appendUserBubble(text) {
@@ -1147,11 +1153,13 @@
         }
 
         async function processQuestion(questionText) {
-            const cleanText = questionText.trim();
+            const cleanText = String(questionText == null ? '' : questionText).trim();
             if (!cleanText) return;
 
             appendUserBubble(cleanText);
             showTypingIndicator();
+
+            const officialFallback = "I couldn't reach the SVIT answer service right now. For verified information, contact SVIT:\n• Official Website: https://saividya.ac.in/\n• Helpline: +91 8028468191, +91 9108575191\n• Email: info@saividya.ac.in / admission@saividya.ac.in";
 
             try {
                 const response = await fetch('/api/chat', {
@@ -1163,17 +1171,21 @@
                 removeTypingIndicator();
 
                 if (response.ok) {
-                    const data = await response.json();
-                    const answer = (data && data.answer) ? data.answer : findPredefinedAnswer(cleanText);
+                    const data = await response.json().catch(function () { return {}; });
+                    const answer = (data && (data.reply || data.answer || data.response))
+                        ? String(data.reply || data.answer || data.response)
+                        : (findPredefinedAnswer(cleanText) || officialFallback);
                     appendBotBubble(answer, (data && data.source) || 'api');
                 } else {
                     console.warn('Chat API responded with status', response.status);
-                    appendBotBubble(findPredefinedAnswer(cleanText), 'local');
+                    const local = findPredefinedAnswer(cleanText);
+                    appendBotBubble(local || officialFallback, 'local');
                 }
             } catch (err) {
                 removeTypingIndicator();
                 console.warn('Chat API unreachable, using local knowledge base:', err);
-                appendBotBubble(findPredefinedAnswer(cleanText), 'local');
+                const local = findPredefinedAnswer(cleanText);
+                appendBotBubble(local || officialFallback, 'local');
             }
         }
 
