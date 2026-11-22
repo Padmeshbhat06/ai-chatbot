@@ -839,6 +839,8 @@
                 if (kb.comedkCutoffs && kb.comedkCutoffs.summary) parts.push(kb.comedkCutoffs.summary);
                 return parts.length ? parts.join('\n\n') : key;
             }
+            if (name === 'KCET_CUTOFFS_SUMMARY') { return kb.kcetCutoffs && kb.kcetCutoffs.summary ? kb.kcetCutoffs.summary : key; }
+            if (name === 'COMEDK_CUTOFFS_SUMMARY') { return kb.comedkCutoffs && kb.comedkCutoffs.summary ? kb.comedkCutoffs.summary : key; }
             if (name === 'ISE_CLUBS') { return kb.iseClubs && kb.iseClubs.summary ? kb.iseClubs.summary : key; }
             if (name === 'AUTONOMOUS_INFO') { return kb.autonomousInfo && kb.autonomousInfo.summary ? kb.autonomousInfo.summary : key; }
             return key;
@@ -1073,7 +1075,7 @@
                 }
             }
             // Anti-hallucination guard: vague / unverifiable queries (seat availability, category-wise ranks, counselling rounds)
-            const antiHallucinationKeywords = ['seat availability', 'seat allotment', 'category', 'counselling round', 'custom fee concession', 'exact cutoff rank'];
+            const antiHallucinationKeywords = ['menu', 'donation', 'management quota', 'seat availability', 'seat allotment', 'counselling round', 'custom fee concession', 'exact cutoff rank', 'free seat', 'refund'];
             if (antiHallucinationKeywords.some(function (kw) { return normalized.includes(kw); })) {
                 return window.__SVIT_KB__ && window.__SVIT_KB__.chatbot
                     ? window.__SVIT_KB__.chatbot.antiHallucinationFallback

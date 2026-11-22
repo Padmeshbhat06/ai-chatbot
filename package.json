@@ -1,14 +1,14 @@
 {
   "name": "svit-chatbot",
   "version": "1.0.0",
-  "description": "SVIT Admissions Chatbot with verified knowledge base and live search grounding",
+  "description": "SVIT (Sai Vidya Institute of Technology) portal & chatbot with verified knowledge base and live search grounding",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "node server.js",
     "start": "node server.js",
-    "build": "node -e \"require('./src/data/svitKnowledgeBase.json'); require('fs').readFileSync('api/chat.js'); console.log('Build OK: KB JSON valid, api/chat.js readable')\"",
-    "test": "node test_api.js"
+    "build": "node -e \"require('./src/data/svitKnowledgeBase.json'); require('./lib/chat-core'); require('fs').readFileSync('api/chat.js'); require('fs').readFileSync('server.js'); require('fs').readFileSync('index.html'); console.log('Build OK: KB JSON valid, chat-core + api + server + index load cleanly')\"",
+    "test": "node test/api.test.js"
   }
 }
