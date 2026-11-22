@@ -15,50 +15,137 @@
     "affiliatedTo": "Visvesvaraya Technological University (VTU)",
     "recognizedBy": "Government of Karnataka",
     "naacGrade": "A",
-    "nbaDepartments": ["CSE", "ECE", "ISE"],
-    "activeChapters": ["MHRD's Innovation Cell", "Institution's Innovation Council (IIC)", "IEEE SSIT", "IEEE Education Society"]
+    "nbaDepartments": [
+      "CSE",
+      "ECE",
+      "ISE"
+    ],
+    "activeChapters": [
+      "MHRD's Innovation Cell",
+      "Institution's Innovation Council (IIC)",
+      "IEEE SSIT",
+      "IEEE Education Society"
+    ]
   },
   "kcetCutoffs": {
     "note": "Karnataka CET closing rank reference table. Actual cutoffs vary by category and counselling round.",
     "branchWise": {
-      "CSE": { "2024": "59,336", "2025": "60,637.5", "2026": "99,704" },
-      "CSE-AIML": { "2024": "76,426", "2025": "60,373", "2026": "71,959" },
-      "CSE-CyberSecurity": { "2026": "96,221" },
-      "CSE-DS": { "2024": "99,060", "2025": "82,792", "2026": "1,11,928" },
-      "ECE": { "2024": "97,805", "2025": "1,00,243", "2026": "1,26,537" },
-      "CSBS": { "2026": "1,47,154" },
-      "ME": { "2024": "1,87,819", "2025": "1,51,803", "2026": "2,31,548" },
-      "ISE": { "2024": "85,019", "2025": "1,22,980" },
-      "CE": { "2024": "1,65,345", "2025": "1,24,471" }
+      "CSE": {
+        "2024": "59,336",
+        "2025": "60,637.5",
+        "2026": "99,704"
+      },
+      "CSE-AIML": {
+        "2024": "76,426",
+        "2025": "60,373",
+        "2026": "71,959"
+      },
+      "CSE-CyberSecurity": {
+        "2026": "96,221"
+      },
+      "CSE-DS": {
+        "2024": "99,060",
+        "2025": "82,792",
+        "2026": "1,11,928"
+      },
+      "ECE": {
+        "2024": "97,805",
+        "2025": "1,00,243",
+        "2026": "1,26,537"
+      },
+      "CSBS": {
+        "2026": "1,47,154"
+      },
+      "ME": {
+        "2024": "1,87,819",
+        "2025": "1,51,803",
+        "2026": "2,31,548"
+      },
+      "ISE": {
+        "2024": "85,019",
+        "2025": "1,22,980"
+      },
+      "CE": {
+        "2024": "1,65,345",
+        "2025": "1,24,471"
+      }
     },
     "summary": "SVIT KCET Cut-off Ranks (2024-2026):\n• CSE: 2024: 59,336 | 2025: 60,637.5 | 2026: 99,704\n• CSE (AI & ML): 2024: 76,426 | 2025: 60,373 | 2026: 71,959\n• CSE (Cyber Security): 2026: 96,221\n• CSE (Data Science): 2024: 99,060 | 2025: 82,792 | 2026: 1,11,928\n• ECE: 2024: 97,805 | 2025: 1,00,243 | 2026: 1,26,537\n• CSBS: 2026: 1,47,154\n• Mechanical Engineering: 2024: 1,87,819 | 2025: 1,51,803 | 2026: 2,31,548\n• ISE: 2024: 85,019 | 2025: 1,22,980\n• Civil Engineering: 2024: 1,65,345 | 2025: 1,24,471\n\nNote: Actual cutoffs vary by category and counselling round."
   },
   "comedkCutoffs": {
     "note": "COMEDK UGET last round closing rank - General All India (2024-2026).",
     "branchWise": {
-      "ECE": { "2024": "45,073", "2025": "33,986", "2026": "27,749" },
-      "CSBS": { "2026": "54,199" },
-      "CSE": { "2024": "94,982", "2025": "1,06,788", "2026": "99,191" },
-      "CSE-AIML": { "2024": "89,418", "2025": "1,10,575", "2026": "1,04,449" },
-      "CE": { "2025": "1,05,192", "2026": "1,04,664" },
-      "ME": { "2024": "94,065", "2025": "97,836", "2026": "1,06,843" },
-      "CSE-CyberSecurity": { "2026": "1,08,058" },
-      "CSE-DS": { "2024": "97,470", "2025": "1,11,627", "2026": "1,09,116" },
-      "ISE": { "2024": "92,767", "2025": "1,06,810" }
+      "ECE": {
+        "2024": "45,073",
+        "2025": "33,986",
+        "2026": "27,749"
+      },
+      "CSBS": {
+        "2026": "54,199"
+      },
+      "CSE": {
+        "2024": "94,982",
+        "2025": "1,06,788",
+        "2026": "99,191"
+      },
+      "CSE-AIML": {
+        "2024": "89,418",
+        "2025": "1,10,575",
+        "2026": "1,04,449"
+      },
+      "CE": {
+        "2025": "1,05,192",
+        "2026": "1,04,664"
+      },
+      "ME": {
+        "2024": "94,065",
+        "2025": "97,836",
+        "2026": "1,06,843"
+      },
+      "CSE-CyberSecurity": {
+        "2026": "1,08,058"
+      },
+      "CSE-DS": {
+        "2024": "97,470",
+        "2025": "1,11,627",
+        "2026": "1,09,116"
+      },
+      "ISE": {
+        "2024": "92,767",
+        "2025": "1,06,810"
+      }
     },
     "summary": "SVIT COMEDK UGET Cut-off Ranks (2024-2026):\n• ECE: 2024: 45,073 | 2025: 33,986 | 2026: 27,749\n• CSBS: 2026: 54,199\n• CSE: 2024: 94,982 | 2025: 1,06,788 | 2026: 99,191\n• CSE (AI & ML): 2024: 89,418 | 2025: 1,10,575 | 2026: 1,04,449\n• Civil Engineering: 2025: 1,05,192 | 2026: 1,04,664\n• Mechanical Engineering: 2024: 94,065 | 2025: 97,836 | 2026: 1,06,843\n• CSE (Cyber Security): 2026: 1,08,058\n• CSE (Data Science): 2024: 97,470 | 2025: 1,11,627 | 2026: 1,09,116\n• ISE: 2024: 92,767 | 2025: 1,06,810\n\nNote: Last round closing rank - General All India."
   },
   "iseClubs": {
     "motto": "Explore New Ideas - Build New Skills - Inspire New Futures | Ideate - Build - Dominate",
     "coreTechArena": [
-      { "name": "AIGNITE", "description": "AI Club" },
-      { "name": "CAPTURE THE FLAG", "description": "Cyber Security Club" },
-      { "name": "CODESPHERE", "description": "Coding Club" },
-      { "name": "V.I.K.H.A.S", "description": "ISE Cloud Club" }
+      {
+        "name": "AIGNITE",
+        "description": "AI Club"
+      },
+      {
+        "name": "CAPTURE THE FLAG",
+        "description": "Cyber Security Club"
+      },
+      {
+        "name": "CODESPHERE",
+        "description": "Coding Club"
+      },
+      {
+        "name": "V.I.K.H.A.S",
+        "description": "ISE Cloud Club"
+      }
     ],
     "creativeEdgeZone": [
-      { "name": "SAMARTHYA", "description": "ISE Club" },
-      { "name": "TECHNICS FORUM", "description": "" }
+      {
+        "name": "SAMARTHYA",
+        "description": "ISE Club"
+      },
+      {
+        "name": "TECHNICS FORUM",
+        "description": ""
+      }
     ],
     "summary": "SVIT Department of Information Science & Engineering (ISE) Clubs:\n\nMotto: Explore New Ideas - Build New Skills - Inspire New Futures | Ideate - Build - Dominate\n\nCore Tech Arena:\n1. AIGNITE — AI Club\n2. CAPTURE THE FLAG — Cyber Security Club\n3. CODESPHERE — Coding Club\n4. V.I.K.H.A.S — ISE Cloud Club\n\nCreative Edge Zone:\n5. SAMARTHYA — ISE Club\n6. TECHNICS FORUM"
   },
@@ -89,7 +176,10 @@
       "Mechanical Engineering (ME)",
       "Civil Engineering (CE)"
     ],
-    "management": ["BBA (Bachelor of Business Administration – 3 Years)", "MBA (Master of Business Administration – 2 Years)"],
+    "management": [
+      "BBA (Bachelor of Business Administration – 3 Years)",
+      "MBA (Master of Business Administration – 2 Years)"
+    ],
     "research": "VTU-recognized Ph.D. research centres (including ECE and CSE).",
     "summary": "SVIT offers:\n• B.Tech Computer Science & Engineering (4 yrs, 180 seats)\n• B.Tech Electronics & Communication Engg. (4 yrs)\n• BBA Business Administration (3 yrs, 120 seats)\n• MBA Master of Business Administration (2 yrs, 60 seats)",
     "notOffered": "SVIT does not currently offer M.Tech or MCA programs. Our postgraduate program is the MBA (Master of Business Administration) — 2 years, ₹76,000/yr. For undergraduate programs we offer B.Tech and BBA."
@@ -127,9 +217,16 @@
         "name": "SKU – Siri Kannada Utsava",
         "description": "SKU – Siri Kannada Utsava is SVIT's grand annual Kannada cultural extravaganza celebrating Karnataka's rich heritage, art, literature, music, folk and classical dance, theatre, and student creativity through vibrant inter-departmental and inter-collegiate cultural competitions.",
         "type": "Grand Kannada Cultural Extravaganza"
+      },
+      {
+        "name": "Sanchalana Samvega 2026",
+        "type": "Annual State-Level Cultural Festival",
+        "dates": "April 16–18, 2026",
+        "description": "Annual state-level cultural festival featuring music, dance, literary, arts, tech/gaming, and sports competitions alongside live concerts featuring Raghu Dixit and DJ Arun productions.",
+        "highlights": "Competitions across music, dance, literary, arts, tech/gaming, and sports categories alongside live concerts featuring Raghu Dixit and DJ Arun productions."
       }
     ],
-    "summary": "SVIT's 3 Flagship Events:\n• HackFest — National-Level Hackathon (24–36 hr coding marathon with cash prizes)\n• TechVidya — Annual Inter-Collegiate Technical Festival\n• SKU (Siri Kannada Utsava) — Grand Kannada Cultural Extravaganza",
+    "summary": "SVIT's Flagship Events:\n• HackFest — National-Level Hackathon (24–36 hr coding marathon with cash prizes)\n• TechVidya — Annual Inter-Collegiate Technical Festival\n• SKU (Siri Kannada Utsava) — Grand Kannada Cultural Extravaganza\n• Sanchalana Samvega 2026 — Annual State-Level Cultural Festival (April 16–18, 2026)",
     "additionalEvents": [
       {
         "name": "Prompt & Pixel",
@@ -202,17 +299,39 @@
   "internships": {
     "stipendBased2026": {
       "totalStudents": "284 students",
-      "branchWise": { "ECE": 82, "CSE-DS": 60, "CSE": 55, "CSE-AIML": 50, "ISE": 36, "ME": 1 }
+      "branchWise": {
+        "ECE": 82,
+        "CSE-DS": 60,
+        "CSE": 55,
+        "CSE-AIML": 50,
+        "ISE": 36,
+        "ME": 1
+      }
     },
     "general2026": {
       "totalOffers": "357 offers",
-      "branchWise": { "ISE": 90, "CSE": 82, "CSE-AIML": 78, "ECE": 66, "CSE-DS": 66, "ME": 0 }
+      "branchWise": {
+        "ISE": 90,
+        "CSE": 82,
+        "CSE-AIML": 78,
+        "ECE": 66,
+        "CSE-DS": 66,
+        "ME": 0
+      }
     },
     "summary": "SVIT Internship Offers — 2026 Passing Out Batch:\n\nStipend-Based Internships (284 students total):\n• ECE: 82\n• CSE-DS (Data Science): 60\n• CSE: 55\n• CSE-AIML (AIML): 50\n• ISE: 36\n• ME (Mechanical Engineering): 1\n\nGeneral Internships (357 offers total):\n• ISE: 90\n• CSE: 82\n• CSE-AIML (AIML): 78\n• ECE: 66\n• CSE-DS (DS): 66\n• ME (Mechanical Engineering): 0\n\nInternship Cell: internship@saividya.ac.in",
-    "contacts": { "internshipCellEmail": "internship@saividya.ac.in" }
+    "contacts": {
+      "internshipCellEmail": "internship@saividya.ac.in"
+    }
   },
   "mechanicalEngineering": {
-    "coreFocusAreas": ["Design & Manufacturing", "Thermal & Fluids", "CAD / CAE / Simulation", "Research & Innovation", "Holistic Development"],
+    "coreFocusAreas": [
+      "Design & Manufacturing",
+      "Thermal & Fluids",
+      "CAD / CAE / Simulation",
+      "Research & Innovation",
+      "Holistic Development"
+    ],
     "bestPractices": [
       "Industry-Institute Interaction: Enhancing practical learning through internships, industry exposure, expert interactions, and institute collaboration",
       "Value Added Programmes: Industry-oriented skill programmes in CAD, CAM, CAE, CNC, 3D printing, and emerging mechanical technologies",
@@ -231,9 +350,21 @@
     "description": "Separate On-Campus Hostels: Dedicated residential blocks for Boys (4-storey building, ~100 rooms, accommodating ~300 students) and Girls (3-storey building, 50+ rooms, 3-sharing accommodation), supervised by residential faculty wardens.",
     "amenities": "Furnished rooms, hygienic in-house kitchen and dining mess (4 meals daily: Breakfast, Lunch, Evening Snacks, Dinner), solar water heaters for hot water, floor-wise RO drinking water purifiers, Wi-Fi, and 24/7 security.",
     "wardens": [
-      { "name": "Mr. Pavan Kumar R", "role": "Boys Hostel Warden", "phone": "+91 9900034082" },
-      { "name": "Dr. Vijayashree Budyal", "role": "Girls Hostel Warden", "phone": "+91 8105148994" },
-      { "name": "Mrs. Lavanya Reddy", "role": "Girls Hostel Warden", "phone": "+91 8317440756" }
+      {
+        "name": "Mr. Pavan Kumar R",
+        "role": "Boys Hostel Warden",
+        "phone": "+91 9900034082"
+      },
+      {
+        "name": "Dr. Vijayashree Budyal",
+        "role": "Girls Hostel Warden",
+        "phone": "+91 8105148994"
+      },
+      {
+        "name": "Mrs. Lavanya Reddy",
+        "role": "Girls Hostel Warden",
+        "phone": "+91 8317440756"
+      }
     ],
     "summary": "SVIT On-Campus Hostel Facilities:\n• Separate on-campus hostels for Boys (4-storey building, ~100 rooms, ~300 students) and Girls (3-storey building, 50+ rooms, 3-sharing accommodation), supervised by residential faculty wardens.\n• Amenities: Furnished rooms, hygienic in-house kitchen and dining mess (4 meals daily: Breakfast, Lunch, Evening Snacks, Dinner), solar water heaters for hot water, floor-wise RO drinking water purifiers, Wi-Fi, and 24/7 security.\n• Hostel Contacts:\n  - Boys Hostel Warden: Mr. Pavan Kumar R (+91 9900034082)\n  - Girls Hostel Wardens: Dr. Vijayashree Budyal (+91 8105148994), Mrs. Lavanya Reddy (+91 8317440756)"
   },
@@ -269,57 +400,570 @@
       "Tell me about ISE department clubs"
     ],
     "knowledgeBaseEntries": [
-      { "keywords": ["hi", "hello", "hey", "greetings", "start"], "answer": "__GREETING__" },
-      { "keywords": ["svit", "sai vidya", "college name", "institute", "about", "motto", "learn to lead"], "answer": "__COLLEGE_ABOUT__" },
-      { "keywords": ["admission", "admissions", "apply", "eligibility", "eligible", "deadline", "counseling"], "answer": "__ADMISSIONS_PATHWAYS__" },
-      { "keywords": ["kcet", "kea", "e173"], "answer": "__KEA_KCET_CODE__" },
-      { "keywords": ["comdk", "e113", "comedk uget"], "answer": "__COMEDK_CODE__" },
-      { "keywords": ["branch", "branches", "engineering branches", "be", "btech", "b.tech", "cse", "ece", "ise", "mechanical", "civil", "cyber security", "csbs"], "answer": "__ENGINEERING_BRANCHES__" },
-      { "keywords": ["course", "courses", "program", "programs", "degree", "btech", "b.tech", "bba", "mba"], "answer": "__COURSES_SUMMARY__" },
-      { "keywords": ["fee", "fees", "tuition", "cost", "price", "charges"], "answer": "__FEES_SUMMARY__" },
-      { "keywords": ["mtech", "m.tech", "mca"], "answer": "__NOT_OFFERED__" },
-      { "keywords": ["timing", "timings", "class", "classes", "schedule", "lab", "labs", "cafeteria", "canteen", "hours"], "answer": "__TIMINGS_SUMMARY__" },
-      { "keywords": ["library", "books", "book", "study", "reading"], "answer": "__LIBRARY_DESCRIPTION__" },
-      { "keywords": ["hackfest", "hack fest", "hackathon"], "answer": "__HACKFEST_DESCRIPTION__" },
-      { "keywords": ["techvidya", "tech vidya", "technical fest"], "answer": "__TECHVIDYA_DESCRIPTION__" },
-      { "keywords": ["sku", "siri kannada", "kannada utsava", "cultural fest", "cultural"], "answer": "__SKU_DESCRIPTION__" },
-      { "keywords": ["event", "events", "fest", "festival"], "answer": "__EVENTS_SUMMARY__" },
-      { "keywords": ["contact", "phone", "email", "address", "location", "where", "helpdesk"], "answer": "__CONTACT_DETAILS__" },
-      { "keywords": ["placement email", "internship email", "admission email", "placement phone", "placement contact", "placement cell", "internship cell", "placement enquiry"], "answer": "__PLACEMENT_CONTACTS__" },
-      { "keywords": ["placement", "placements", "placement offers", "2026 placement", "highest package", "ctc", "lpa", "33 lpa", "branch wise", "branch-wise", "package", "salary", "training and placement", "tpo", "placement officer", "anand kumar", "placement statistics"], "answer": "__PLACEMENTS_SUMMARY__" },
-      { "keywords": ["internship", "internships", "stipend", "stipend based", "stipend-based", "internship offers", "internship statistics"], "answer": "__INTERNSHIPS_SUMMARY__" },
-      { "keywords": ["mechanical", "me branch", "department of mechanical", "sae", "robotics", "cad cam", "cae", "cnc", "3d printing", "proctor", "project exhibition", "toppers meet", "best outgoing student", "nptel", "mooc", "mechanical best practices", "design manufacturing", "thermal fluids", "simulation"], "answer": "__MECHANICAL_SUMMARY__" },
-      { "keywords": ["club", "clubs", "technical club", "student club"], "answer": "__CLUBS_OVERVIEW__" },
-      { "keywords": ["coding club", "coding club svit"], "answer": "__CODING_CLUB__" },
-      { "keywords": ["codenex", "code nex"], "answer": "__CODENEX__" },
-      { "keywords": ["aiera"], "answer": "__AIERA__" },
-      { "keywords": ["lang net", "langnet"], "answer": "__LANG_NET__" },
-      { "keywords": ["data nexus", "datanexus"], "answer": "__DATA_NEXUS__" },
-      { "keywords": ["agentic arc", "agenticarc"], "answer": "__AGENTIC_ARC__" },
-      { "keywords": ["data science club", "data vision", "beyond code", "yuva codes", "nexaura", "cevovate", "synapse club", "utkrashta"], "answer": "__DATA_SCIENCE_CLUBS__" },
-      { "keywords": ["civil tech", "civiltech", "build smart", "buildsmart", "civil engineering club", "civil club"], "answer": "__CIVIL_TECH__" },
-      { "keywords": ["prompt", "pixel", "prompt and pixel", "prompt & pixel", "pair program"], "answer": "__PROMPT_PIXEL__" },
-      { "keywords": ["open day", "technical open day", "club open day", "stall"], "answer": "__TECH_OPEN_DAY__" },
-      { "keywords": ["coderelay", "code relay"], "answer": "__CODERELAY__" },
-      { "keywords": ["buggers", "crackers", "ultimate coding challenge", "debugging challenge"], "answer": "__BUGGERS_CRACKERS__" },
-      { "keywords": ["sammilana", "alumni", "alumni meet", "reunite", "relive", "reconnect"], "answer": "__ALUMNI_MEET__" },
-      { "keywords": ["best practice", "best practices", "mooc", "patent", "sdp", "peer learning", "weekend with alumni"], "answer": "__BEST_PRACTICES_CSE__" },
-      { "keywords": ["vibe learning", "harmony 360", "bond beyond", "industry pulse", "linkedin empowerment", "data science best"], "answer": "__BEST_PRACTICES_DS__" },
-      { "keywords": ["civil best practice", "civil engineering practice", "survey camp", "virtual lab"], "answer": "__BEST_PRACTICES_CIVIL__" },
-      { "keywords": ["trustee", "trustees", "management", "founder", "samithi", "managing trustee"], "answer": "__TRUSTEES__" },
-      { "keywords": ["principal", "vice principal", "hod", "head of department", "dean", "leadership", "manjunath", "shashikumar", "shantakumar", "lakshminarayaachari"], "answer": "__ACADEMIC_LEADERSHIP__" },
-      { "keywords": ["innovation", "iic", "ieee", "mhrd"], "answer": "__INNOVATION_CELL__" },
-      { "keywords": ["naac", "nba", "accreditation", "accredited", "aicte", "vtu", "approved", "affiliated", "recognition"], "answer": "__ACCREDITATIONS__" },
-      { "keywords": ["hostel", "hostels", "boys hostel", "girls hostel", "warden", "accommodation", "residential"], "answer": "__HOSTEL_SUMMARY__" },
-      { "keywords": ["transport", "bus", "college bus", "route", "r1", "r2", "r3", "r4", "r5", "r6", "r7", "r8", "commuting"], "answer": "__TRANSPORT_SUMMARY__" },
-      { "keywords": ["campus facilities", "infrastructure", "wifi", "gymnasium", "sports", "auditorium", "seminar hall"], "answer": "__CAMPUS_FACILITIES_SUMMARY__" },
-      { "keywords": ["scholarship", "scholarships", "ssp", "nsp", "merit", "fee concession", "autonomous"], "answer": "__AUTONOMOUS_INFO__" },
-      { "keywords": ["documents required", "documents", "admission documents"], "answer": "__DOCUMENTS_REQUIRED__" },
-      { "keywords": ["kcet cutoff", "kcet cut off", "kcet rank", "karnataka cet cutoff", "cet closing rank"], "answer": "__KCET_CUTOFFS_SUMMARY__" },
-      { "keywords": ["comedk cutoff", "comedk cut off", "comedk rank", "uget cutoff", "comedk closing rank"], "answer": "__COMEDK_CUTOFFS_SUMMARY__" },
-      { "keywords": ["cutoff", "cut off", "rank", "closing rank"], "answer": "__CUTOFFS_SUMMARY__" },
-      { "keywords": ["ise club", "ise clubs", "department of ise", "information science club", "aignite", "samarthya", "capture the flag", "codesphere", "vikhas", "technics forum", "core tech arena", "creative edge zone"], "answer": "__ISE_CLUBS__" },
-      { "keywords": ["seat availability", "seat allotment", "category", "counselling round", "custom fee concession", "exact cutoff rank"], "answer": "__ANTI_HALLUCINATION_FALLBACK__" }
+      {
+        "keywords": [
+          "hi",
+          "hello",
+          "hey",
+          "greetings",
+          "start"
+        ],
+        "answer": "__GREETING__"
+      },
+      {
+        "keywords": [
+          "svit",
+          "sai vidya",
+          "college name",
+          "institute",
+          "about",
+          "motto",
+          "learn to lead"
+        ],
+        "answer": "__COLLEGE_ABOUT__"
+      },
+      {
+        "keywords": [
+          "admission",
+          "admissions",
+          "apply",
+          "eligibility",
+          "eligible",
+          "deadline",
+          "counseling"
+        ],
+        "answer": "__ADMISSIONS_PATHWAYS__"
+      },
+      {
+        "keywords": [
+          "kcet",
+          "kea",
+          "e173"
+        ],
+        "answer": "__KEA_KCET_CODE__"
+      },
+      {
+        "keywords": [
+          "comdk",
+          "e113",
+          "comedk uget"
+        ],
+        "answer": "__COMEDK_CODE__"
+      },
+      {
+        "keywords": [
+          "branch",
+          "branches",
+          "engineering branches",
+          "be",
+          "btech",
+          "b.tech",
+          "cse",
+          "ece",
+          "ise",
+          "mechanical",
+          "civil",
+          "cyber security",
+          "csbs"
+        ],
+        "answer": "__ENGINEERING_BRANCHES__"
+      },
+      {
+        "keywords": [
+          "course",
+          "courses",
+          "program",
+          "programs",
+          "degree",
+          "btech",
+          "b.tech",
+          "bba",
+          "mba"
+        ],
+        "answer": "__COURSES_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "fee",
+          "fees",
+          "tuition",
+          "cost",
+          "price",
+          "charges"
+        ],
+        "answer": "__FEES_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "mtech",
+          "m.tech",
+          "mca"
+        ],
+        "answer": "__NOT_OFFERED__"
+      },
+      {
+        "keywords": [
+          "timing",
+          "timings",
+          "class",
+          "classes",
+          "schedule",
+          "lab",
+          "labs",
+          "cafeteria",
+          "canteen",
+          "hours"
+        ],
+        "answer": "__TIMINGS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "library",
+          "books",
+          "book",
+          "study",
+          "reading"
+        ],
+        "answer": "__LIBRARY_DESCRIPTION__"
+      },
+      {
+        "keywords": [
+          "hackfest",
+          "hack fest",
+          "hackathon"
+        ],
+        "answer": "__HACKFEST_DESCRIPTION__"
+      },
+      {
+        "keywords": [
+          "techvidya",
+          "tech vidya",
+          "technical fest"
+        ],
+        "answer": "__TECHVIDYA_DESCRIPTION__"
+      },
+      {
+        "keywords": [
+          "sku",
+          "siri kannada",
+          "kannada utsava",
+          "cultural fest",
+          "cultural"
+        ],
+        "answer": "__SKU_DESCRIPTION__"
+      },
+      {
+        "keywords": [
+          "event",
+          "events",
+          "fest",
+          "festival"
+        ],
+        "answer": "__EVENTS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "contact",
+          "phone",
+          "email",
+          "address",
+          "location",
+          "where",
+          "helpdesk"
+        ],
+        "answer": "__CONTACT_DETAILS__"
+      },
+      {
+        "keywords": [
+          "placement email",
+          "internship email",
+          "admission email",
+          "placement phone",
+          "placement contact",
+          "placement cell",
+          "internship cell",
+          "placement enquiry"
+        ],
+        "answer": "__PLACEMENT_CONTACTS__"
+      },
+      {
+        "keywords": [
+          "placement",
+          "placements",
+          "placement offers",
+          "2026 placement",
+          "highest package",
+          "ctc",
+          "lpa",
+          "33 lpa",
+          "branch wise",
+          "branch-wise",
+          "package",
+          "salary",
+          "training and placement",
+          "tpo",
+          "placement officer",
+          "anand kumar",
+          "placement statistics"
+        ],
+        "answer": "__PLACEMENTS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "internship",
+          "internships",
+          "stipend",
+          "stipend based",
+          "stipend-based",
+          "internship offers",
+          "internship statistics"
+        ],
+        "answer": "__INTERNSHIPS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "mechanical",
+          "me branch",
+          "department of mechanical",
+          "sae",
+          "robotics",
+          "cad cam",
+          "cae",
+          "cnc",
+          "3d printing",
+          "proctor",
+          "project exhibition",
+          "toppers meet",
+          "best outgoing student",
+          "nptel",
+          "mooc",
+          "mechanical best practices",
+          "design manufacturing",
+          "thermal fluids",
+          "simulation"
+        ],
+        "answer": "__MECHANICAL_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "club",
+          "clubs",
+          "technical club",
+          "student club"
+        ],
+        "answer": "__CLUBS_OVERVIEW__"
+      },
+      {
+        "keywords": [
+          "coding club",
+          "coding club svit"
+        ],
+        "answer": "__CODING_CLUB__"
+      },
+      {
+        "keywords": [
+          "codenex",
+          "code nex"
+        ],
+        "answer": "__CODENEX__"
+      },
+      {
+        "keywords": [
+          "aiera"
+        ],
+        "answer": "__AIERA__"
+      },
+      {
+        "keywords": [
+          "lang net",
+          "langnet"
+        ],
+        "answer": "__LANG_NET__"
+      },
+      {
+        "keywords": [
+          "data nexus",
+          "datanexus"
+        ],
+        "answer": "__DATA_NEXUS__"
+      },
+      {
+        "keywords": [
+          "agentic arc",
+          "agenticarc"
+        ],
+        "answer": "__AGENTIC_ARC__"
+      },
+      {
+        "keywords": [
+          "data science club",
+          "data vision",
+          "beyond code",
+          "yuva codes",
+          "nexaura",
+          "cevovate",
+          "synapse club",
+          "utkrashta"
+        ],
+        "answer": "__DATA_SCIENCE_CLUBS__"
+      },
+      {
+        "keywords": [
+          "civil tech",
+          "civiltech",
+          "build smart",
+          "buildsmart",
+          "civil engineering club",
+          "civil club"
+        ],
+        "answer": "__CIVIL_TECH__"
+      },
+      {
+        "keywords": [
+          "prompt",
+          "pixel",
+          "prompt and pixel",
+          "prompt & pixel",
+          "pair program"
+        ],
+        "answer": "__PROMPT_PIXEL__"
+      },
+      {
+        "keywords": [
+          "open day",
+          "technical open day",
+          "club open day",
+          "stall"
+        ],
+        "answer": "__TECH_OPEN_DAY__"
+      },
+      {
+        "keywords": [
+          "coderelay",
+          "code relay"
+        ],
+        "answer": "__CODERELAY__"
+      },
+      {
+        "keywords": [
+          "buggers",
+          "crackers",
+          "ultimate coding challenge",
+          "debugging challenge"
+        ],
+        "answer": "__BUGGERS_CRACKERS__"
+      },
+      {
+        "keywords": [
+          "sammilana",
+          "alumni",
+          "alumni meet",
+          "reunite",
+          "relive",
+          "reconnect"
+        ],
+        "answer": "__ALUMNI_MEET__"
+      },
+      {
+        "keywords": [
+          "best practice",
+          "best practices",
+          "mooc",
+          "patent",
+          "sdp",
+          "peer learning",
+          "weekend with alumni"
+        ],
+        "answer": "__BEST_PRACTICES_CSE__"
+      },
+      {
+        "keywords": [
+          "vibe learning",
+          "harmony 360",
+          "bond beyond",
+          "industry pulse",
+          "linkedin empowerment",
+          "data science best"
+        ],
+        "answer": "__BEST_PRACTICES_DS__"
+      },
+      {
+        "keywords": [
+          "civil best practice",
+          "civil engineering practice",
+          "survey camp",
+          "virtual lab"
+        ],
+        "answer": "__BEST_PRACTICES_CIVIL__"
+      },
+      {
+        "keywords": [
+          "trustee",
+          "trustees",
+          "management",
+          "founder",
+          "samithi",
+          "managing trustee"
+        ],
+        "answer": "__TRUSTEES__"
+      },
+      {
+        "keywords": [
+          "principal",
+          "vice principal",
+          "hod",
+          "head of department",
+          "dean",
+          "leadership",
+          "manjunath",
+          "shashikumar",
+          "shantakumar",
+          "lakshminarayaachari"
+        ],
+        "answer": "__ACADEMIC_LEADERSHIP__"
+      },
+      {
+        "keywords": [
+          "innovation",
+          "iic",
+          "ieee",
+          "mhrd"
+        ],
+        "answer": "__INNOVATION_CELL__"
+      },
+      {
+        "keywords": [
+          "naac",
+          "nba",
+          "accreditation",
+          "accredited",
+          "aicte",
+          "vtu",
+          "approved",
+          "affiliated",
+          "recognition"
+        ],
+        "answer": "__ACCREDITATIONS__"
+      },
+      {
+        "keywords": [
+          "hostel",
+          "hostels",
+          "boys hostel",
+          "girls hostel",
+          "warden",
+          "accommodation",
+          "residential"
+        ],
+        "answer": "__HOSTEL_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "transport",
+          "bus",
+          "college bus",
+          "route",
+          "r1",
+          "r2",
+          "r3",
+          "r4",
+          "r5",
+          "r6",
+          "r7",
+          "r8",
+          "commuting"
+        ],
+        "answer": "__TRANSPORT_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "campus facilities",
+          "infrastructure",
+          "wifi",
+          "gymnasium",
+          "sports",
+          "auditorium",
+          "seminar hall"
+        ],
+        "answer": "__CAMPUS_FACILITIES_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "scholarship",
+          "scholarships",
+          "ssp",
+          "nsp",
+          "merit",
+          "fee concession",
+          "autonomous"
+        ],
+        "answer": "__AUTONOMOUS_INFO__"
+      },
+      {
+        "keywords": [
+          "documents required",
+          "documents",
+          "admission documents"
+        ],
+        "answer": "__DOCUMENTS_REQUIRED__"
+      },
+      {
+        "keywords": [
+          "kcet cutoff",
+          "kcet cut off",
+          "kcet rank",
+          "karnataka cet cutoff",
+          "cet closing rank"
+        ],
+        "answer": "__KCET_CUTOFFS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "comedk cutoff",
+          "comedk cut off",
+          "comedk rank",
+          "uget cutoff",
+          "comedk closing rank"
+        ],
+        "answer": "__COMEDK_CUTOFFS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "cutoff",
+          "cut off",
+          "rank",
+          "closing rank"
+        ],
+        "answer": "__CUTOFFS_SUMMARY__"
+      },
+      {
+        "keywords": [
+          "ise club",
+          "ise clubs",
+          "department of ise",
+          "information science club",
+          "aignite",
+          "samarthya",
+          "capture the flag",
+          "codesphere",
+          "vikhas",
+          "technics forum",
+          "core tech arena",
+          "creative edge zone"
+        ],
+        "answer": "__ISE_CLUBS__"
+      },
+      {
+        "keywords": [
+          "seat availability",
+          "seat allotment",
+          "category",
+          "counselling round",
+          "custom fee concession",
+          "exact cutoff rank"
+        ],
+        "answer": "__ANTI_HALLUCINATION_FALLBACK__"
+      }
     ]
   }
 }
