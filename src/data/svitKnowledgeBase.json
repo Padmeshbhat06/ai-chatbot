@@ -31,7 +31,7 @@
       "ISE": { "2024": "85,019", "2025": "1,22,980" },
       "CE": { "2024": "1,65,345", "2025": "1,24,471" }
     },
-    "summary": "SVIT KCET Cut-off Ranks (2024-2026):\\n• CSE: 2024: 59,336 | 2025: 60,637.5 | 2026: 99,704\\n• CSE (AI & ML): 2024: 76,426 | 2025: 60,373 | 2026: 71,959\\n• CSE (Cyber Security): 2026: 96,221\\n• CSE (Data Science): 2024: 99,060 | 2025: 82,792 | 2026: 1,11,928\\n• ECE: 2024: 97,805 | 2025: 1,00,243 | 2026: 1,26,537\\n• CSBS: 2026: 1,47,154\\n• Mechanical Engineering: 2024: 1,87,819 | 2025: 1,51,803 | 2026: 2,31,548\\n• ISE: 2024: 85,019 | 2025: 1,22,980\\n• Civil Engineering: 2024: 1,65,345 | 2025: 1,24,471\\n\\nNote: Actual cutoffs vary by category and counselling round."
+    "summary": "SVIT KCET Cut-off Ranks (2024-2026):\n• CSE: 2024: 59,336 | 2025: 60,637.5 | 2026: 99,704\n• CSE (AI & ML): 2024: 76,426 | 2025: 60,373 | 2026: 71,959\n• CSE (Cyber Security): 2026: 96,221\n• CSE (Data Science): 2024: 99,060 | 2025: 82,792 | 2026: 1,11,928\n• ECE: 2024: 97,805 | 2025: 1,00,243 | 2026: 1,26,537\n• CSBS: 2026: 1,47,154\n• Mechanical Engineering: 2024: 1,87,819 | 2025: 1,51,803 | 2026: 2,31,548\n• ISE: 2024: 85,019 | 2025: 1,22,980\n• Civil Engineering: 2024: 1,65,345 | 2025: 1,24,471\n\nNote: Actual cutoffs vary by category and counselling round."
   },
   "comedkCutoffs": {
     "note": "COMEDK UGET last round closing rank - General All India (2024-2026).",
@@ -46,7 +46,7 @@
       "CSE-DS": { "2024": "97,470", "2025": "1,11,627", "2026": "1,09,116" },
       "ISE": { "2024": "92,767", "2025": "1,06,810" }
     },
-    "summary": "SVIT COMEDK UGET Cut-off Ranks (2024-2026):\\n• ECE: 2024: 45,073 | 2025: 33,986 | 2026: 27,749\\n• CSBS: 2026: 54,199\\n• CSE: 2024: 94,982 | 2025: 1,06,788 | 2026: 99,191\\n• CSE (AI & ML): 2024: 89,418 | 2025: 1,10,575 | 2026: 1,04,449\\n• Civil Engineering: 2025: 1,05,192 | 2026: 1,04,664\\n• Mechanical Engineering: 2024: 94,065 | 2025: 97,836 | 2026: 1,06,843\\n• CSE (Cyber Security): 2026: 1,08,058\\n• CSE (Data Science): 2024: 97,470 | 2025: 1,11,627 | 2026: 1,09,116\\n• ISE: 2024: 92,767 | 2025: 1,06,810\\n\\nNote: Last round closing rank - General All India."
+    "summary": "SVIT COMEDK UGET Cut-off Ranks (2024-2026):\n• ECE: 2024: 45,073 | 2025: 33,986 | 2026: 27,749\n• CSBS: 2026: 54,199\n• CSE: 2024: 94,982 | 2025: 1,06,788 | 2026: 99,191\n• CSE (AI & ML): 2024: 89,418 | 2025: 1,10,575 | 2026: 1,04,449\n• Civil Engineering: 2025: 1,05,192 | 2026: 1,04,664\n• Mechanical Engineering: 2024: 94,065 | 2025: 97,836 | 2026: 1,06,843\n• CSE (Cyber Security): 2026: 1,08,058\n• CSE (Data Science): 2024: 97,470 | 2025: 1,11,627 | 2026: 1,09,116\n• ISE: 2024: 92,767 | 2025: 1,06,810\n\nNote: Last round closing rank - General All India."
   },
   "iseClubs": {
     "motto": "Explore New Ideas - Build New Skills - Inspire New Futures | Ideate - Build - Dominate",
@@ -75,7 +75,7 @@
       "National Scholarship Portal (NSP) - Minority Religion Scholarship",
       "Defence Scholarship"
     ],
-    "summary": "SVIT Institutional Details:\\n• Founded in 2008\\n• Autonomous Institution under VTU (Visvesvaraya Technological University, Belagavi)\\n• 12-acre campus at Rajanukunte, via Yelahanka, Bengaluru - 560064\\n• Official Website: https://saividya.ac.in/ (Admissions Desk open all 7 days a week)\\n\\nGovernment Scholarships Supported:\\n• Karnataka State SSP Post-Matric Scholarship & Fee Reimbursement for SC/ST Students\\n• Fee Concession for Category I, II, and III Students\\n• National Scholarship Portal (NSP) - Minority Religion Scholarship\\n• Defence Scholarship"
+    "summary": "SVIT Institutional Details:\n• Founded in 2008\n• Autonomous Institution under VTU (Visvesvaraya Technological University, Belagavi)\n• 12-acre campus at Rajanukunte, via Yelahanka, Bengaluru - 560064\n• Official Website: https://saividya.ac.in/ (Admissions Desk open all 7 days a week)\n\nGovernment Scholarships Supported:\n• Karnataka State SSP Post-Matric Scholarship & Fee Reimbursement for SC/ST Students\n• Fee Concession for Category I, II, and III Students\n• National Scholarship Portal (NSP) - Minority Religion Scholarship\n• Defence Scholarship"
   },
   "courses": {
     "ugEngineering": [

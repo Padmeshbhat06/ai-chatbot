@@ -631,7 +631,7 @@
             id="chat-window"
             role="dialog"
             aria-label="SVIT Chatbot"
-            class="hidden mb-3 w-[92vw] sm:w-[380px] h-[510px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex-col overflow-hidden transition-all duration-200"
+            class="hidden mb-3 w-[92vw] sm:w-[440px] h-[510px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex-col overflow-hidden transition-all duration-200"
         >
             <!-- Chat Header -->
             <div class="bg-slate-900 text-white px-4 py-3.5 flex items-center justify-between">
@@ -1105,22 +1105,84 @@
             scrollToBottom();
         }
 
+        function escapeHtml(str) {
+            return String(str == null ? '' : str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function renderInlineMarkdown(text) {
+            let s = escapeHtml(text);
+            s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+            s = s.replace(/_(.+?)_/g, '<em>$1</em>');
+            s = s.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-brand-600 underline break-all">$1</a>');
+            return s;
+        }
+
+        function renderMarkdownToHtml(input) {
+            let text = String(input == null ? '' : input).replace(/\r\n/g, '\n').replace(/\\n/g, '\n').trim();
+            const lines = text.split('\n');
+            const out = [];
+            let i = 0;
+            while (i < lines.length) {
+                const line = lines[i];
+                if (!line.trim()) { i++; continue; }
+                if (/^\s*\|.+\|\s*$/.test(line)) {
+                    const tableLines = [];
+                    while (i < lines.length && /^\s*\|.+\|\s*$/.test(lines[i])) { tableLines.push(lines[i].trim()); i++; }
+                    const rows = tableLines.filter(r => !/^\|?\s*:?-{3,}/.test(r.replace(/\|/g,'|')));
+                    if (rows.length) {
+                        out.push('<div class="table-wrap overflow-x-auto my-2" style="overflow-x:auto;-webkit-overflow-scrolling:touch;"><table class="min-w-full text-[11px] border border-slate-200 rounded-lg overflow-hidden border-collapse">');
+                        rows.forEach((row, idx) => {
+                            const cells = row.replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+                            if (idx === 0) {
+                                out.push('<thead class="bg-slate-100"><tr>' + cells.map(c => '<th class="px-2 py-1.5 text-left font-semibold border border-slate-200 whitespace-nowrap">' + renderInlineMarkdown(c) + '</th>').join('') + '</tr></thead><tbody>');
+                            } else {
+                                out.push('<tr class="' + (idx % 2 ? 'bg-white' : 'bg-slate-50') + '">' + cells.map(c => '<td class="px-2 py-1.5 border border-slate-200 align-top">' + renderInlineMarkdown(c) + '</td>').join('') + '</tr>');
+                            }
+                        });
+                        out.push('</tbody></table></div>');
+                    }
+                    continue;
+                }
+                if (/^\s*[-•]\s+/.test(line)) {
+                    out.push('<ul class="list-disc pl-4 my-1 space-y-0.5">');
+                    while (i < lines.length && /^\s*[-•]\s+/.test(lines[i])) {
+                        const item = lines[i].replace(/^\s*[-•]\s+/, '');
+                        out.push('<li>' + renderInlineMarkdown(item) + '</li>');
+                        i++;
+                    }
+                    out.push('</ul>');
+                    continue;
+                }
+                const para = [];
+                while (i < lines.length && lines[i].trim() && !/^\s*\|.+\|\s*$/.test(lines[i]) && !/^\s*[-•]\s+/.test(lines[i])) {
+                    para.push(lines[i]); i++;
+                }
+                out.push('<p class="my-1 leading-relaxed">' + para.map(renderInlineMarkdown).join('<br>') + '</p>');
+            }
+            return out.join('');
+        }
+
         function appendBotBubble(text, source) {
             const wrapper = document.createElement('div');
-            wrapper.className = 'flex items-start gap-2 max-w-[88%]';
+            wrapper.className = 'flex items-start gap-2 max-w-[94%]';
 
             const avatar = document.createElement('div');
             avatar.className = 'w-7 h-7 rounded-full bg-brand-600 text-white flex items-center justify-center shrink-0 mt-0.5';
             avatar.innerHTML = '<i data-lucide="bot" class="w-3.5 h-3.5"></i>';
 
-            let bubbleText = text;
+            let bubbleText = String(text == null ? '' : text).replace(/\r\n/g, '\n').replace(/\\n/g, '\n');
             if (source === 'liveSearch') {
-                bubbleText += '\n\n_(Answer via live web search. For official confirmation: https://saividya.ac.in or Admissions Helpline +91 8028468191 / +91 9108575191)_';
+                bubbleText += '\n\n_Answer via live web search. For official confirmation: https://saividya.ac.in or Admissions Helpline +91 8028468191 / +91 9108575191_';
             }
 
             const bubble = document.createElement('div');
-            bubble.className = 'bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-slate-800 shadow-sm whitespace-pre-line break-words leading-relaxed';
-            bubble.textContent = bubbleText;
+            bubble.className = 'bg-white border border-slate-200 p-3 rounded-2xl rounded-tl-none text-slate-800 shadow-sm break-words leading-relaxed overflow-hidden';
+            bubble.innerHTML = renderMarkdownToHtml(bubbleText);
 
             wrapper.appendChild(avatar);
             wrapper.appendChild(bubble);
