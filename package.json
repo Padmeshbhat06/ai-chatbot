@@ -1,0 +1,14 @@
+{
+  "name": "svit-chatbot",
+  "version": "1.0.0",
+  "description": "SVIT Admissions Chatbot with verified knowledge base and live search grounding",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "start": "node server.js",
+    "build": "node -e \"require('./src/data/svitKnowledgeBase.json'); require('fs').readFileSync('api/chat.js'); console.log('Build OK: KB JSON valid, api/chat.js readable')\"",
+    "test": "node test_api.js"
+  }
+}
